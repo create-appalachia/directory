@@ -1,6 +1,10 @@
-- title("Home Page")
+- title('Index')
 
 %h1
   %i.fa.fa-home
-  Home Page
-  %small views/pages/home.html.haml
+  Artists
+
+- @artists.each do |artist|
+  .artist
+    = image_tag artist.listing_image
+    = link_to artist, artist.name
