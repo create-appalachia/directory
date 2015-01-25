@@ -4,7 +4,10 @@
   %i.fa.fa-home
   Artists
 
+= form_tag controller: 'artists', action: 'search', method: :get do
+  = search_field :artist, :name
+
 - @artists.each do |artist|
   .artist
     = image_tag artist.listing_image
-    = link_to artist, artist.name
+    = link_to artist.name, artist
