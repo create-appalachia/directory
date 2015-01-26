@@ -5,4 +5,12 @@
  */
 @import "railsbricks_custom";
 
+.type {
+    text-align: right;
+    font-size: 25px;
+    font-weight: bold;
+}
 
+.type:after {
+    content: ':';
+}

@@ -4,8 +4,12 @@
   %i.fa.fa-home
   Artists
 
-= form_tag controller: 'artists', action: 'search', method: :get do
-  = search_field :artist, :name
+.row
+  = form_tag controller: 'artists', action: 'search', method: :get do |f|
+    .col-sm-8
+      = search_field :artist, :name, { class: 'form-control', placeholder: 'Name' }
+    .col-sm-2
+      -#= collection_select(:artist, :skill_ids, Skill.all( order: 'name ASC' ), :id, :name, { selected: @skill_ids, include_blank: true }, { multiple: true } )
 
 - @artists.each do |artist|
   .artist
